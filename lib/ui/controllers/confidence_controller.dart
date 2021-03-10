@@ -16,8 +16,7 @@ class ConfidenceController with ChangeNotifier {
 }
 
 class ProductBacklogItem {
-  ProductBacklogItem(
-      {this.storyPoint = '', this.name = '', this.confidentDegree});
+  ProductBacklogItem({this.storyPoint, this.name, this.confidentDegree});
   String storyPoint;
   String name;
   int confidentDegree;
