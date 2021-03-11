@@ -6,7 +6,7 @@ part 'product_backlog_item_service.freezed.dart';
 part 'product_backlog_item_service.g.dart';
 
 class ProductBacklogItemService {
-  void send(ProductBacklogItemRequest request) async {
+  Future<void> send(ProductBacklogItemRequest request) async {
     final client = http.Client();
     final String url = 'http://localhost:3000/product-backlog-item';
     await client.post(url, body: request.toJson());
