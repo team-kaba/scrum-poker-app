@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart'; // *.freezed.dartで必要なのでimportしておく
@@ -8,8 +10,8 @@ part 'product_backlog_item_service.g.dart';
 class ProductBacklogItemService {
   Future<void> send(ProductBacklogItemRequest request) async {
     final client = http.Client();
-    final String url = 'http://localhost:3000/product-backlog-item';
-    await client.post(url, body: request.toJson());
+    final String url = 'http://192.168.1.5:3100/product-backlog-item';
+    await client.post(url, body: json.encode(request));
   }
 }
 

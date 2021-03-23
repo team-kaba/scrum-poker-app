@@ -26,7 +26,7 @@ class _ResultPageState extends State<ResultPage> {
       });
       // TODO: controllerクラスでserviceクラスを呼び出す。
       // ローディングも？State管理だめ
-      dynamic response = await GetBacklogItemServise().getBacklogItems();
+      //dynamic response = await GetBacklogItemServise().getBacklogItems();
       setState(() {
         _isLoading = false;
       });

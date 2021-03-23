@@ -20,17 +20,14 @@ abstract class GetBacklogItemResponse with _$GetBacklogItemResponse {
 
 class GetBacklogItemServise {
   final url = 'http:';
-  Future<GetBacklogItemResponse> getBacklogItems() async {
+  Future<List<GetBacklogItemResponse>> getBacklogItems() async {
     final client = http.Client();
-    final String url = 'http://localhost:3000/product-backlog-items';
+    final String url = 'http://localhost:3100/product-backlog-items';
     final response = await client.get(url);
-    final _decodedResponse = utf8.decode(response.bodyBytes);
-    dynamic body;
-    if (_decodedResponse.isNotEmpty) {
-      body = await jsonDecode(_decodedResponse);
-    }
-    if (response.statusCode < 300) {
-      return GetBacklogItemResponse.fromJson(body);
-    }
+    /*final unconfirmedTerms = response['unconfirmedTerms'] as List;
+
+    return response.map((e) {
+      return GetBacklogItemResponse.fromJson(e);
+    }).toList();*/
   }
 }
