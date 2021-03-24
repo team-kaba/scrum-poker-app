@@ -3,15 +3,23 @@ import 'package:flutter/widgets.dart';
 
 // FormFieldでラップし、onSavedを使えるようにする
 class RadioListTileField extends FormField {
+  final FormFieldSetter onSaved;
+  final List<String> confidentList;
+  final List<int> confidentValueList;
+  final int currentConfident;
+  final Color contentsBackgroundColor;
+  final int index;
+  final Function onChanged;
+  final double errorTextFontSize;
   RadioListTileField({
-    FormFieldSetter onSaved,
-    List<String> confidentList,
-    List<int> confidentValueList,
-    int currentConfident,
-    Color contentsBackgroundColor,
-    int index,
-    Function onChanged,
-    double errorTextFontSize = 11.0,
+    this.onSaved,
+    this.confidentList,
+    this.confidentValueList,
+    this.currentConfident,
+    this.contentsBackgroundColor,
+    this.index,
+    this.onChanged,
+    this.errorTextFontSize = 11.0,
   }) : super(
             onSaved: onSaved,
             builder: (FormFieldState state) {

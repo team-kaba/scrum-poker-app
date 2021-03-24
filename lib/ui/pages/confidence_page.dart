@@ -93,13 +93,11 @@ class _ConfidenceDialogState extends State<ConfidenceDialog> {
               setState(
                 () {
                   _currentConfident = val;
-                  print(_currentConfident);
                 },
               );
             },
             onSaved: (val) {
               _form.confidentDegree = _currentConfident;
-              print(_form.confidentDegree);
             },
           );
         },
