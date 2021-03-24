@@ -3,7 +3,7 @@ import 'package:new_scrum_poker/servicies/product_backlog_item_service.dart';
 
 class ConfidenceController with ChangeNotifier {
   void send(BuildContext context, ProductBacklogItem productBacklogItem) {
-    productBacklogItemService().send(ProductBacklogItemRequest(
+    ProductBacklogItemService().send(ProductBacklogItemRequest(
       storyPoint: productBacklogItem.storyPoint,
       name: productBacklogItem.name,
       confidentDegree: productBacklogItem.confidentDegree,
