@@ -9,16 +9,16 @@ part of 'product_backlog_item_service.dart';
 _$_ProductBacklogItemRequest _$_$_ProductBacklogItemRequestFromJson(
     Map<String, dynamic> json) {
   return _$_ProductBacklogItemRequest(
-    story_point: json['story_point'] as String,
+    storyPoint: json['story_point'] as String,
     name: json['name'] as String,
-    confident_degree: json['confident_degree'] as int,
+    confidentDegree: json['confident_degree'] as int,
   );
 }
 
 Map<String, dynamic> _$_$_ProductBacklogItemRequestToJson(
         _$_ProductBacklogItemRequest instance) =>
     <String, dynamic>{
-      'story_point': instance.story_point,
+      'story_point': instance.storyPoint,
       'name': instance.name,
-      'confident_degree': instance.confident_degree,
+      'confident_degree': instance.confidentDegree,
     };

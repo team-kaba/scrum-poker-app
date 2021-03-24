@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:new_scrum_poker/servicies/product_backlog_item_service.dart';
 
 class ConfidenceController with ChangeNotifier {
-  ConfidenceController();
   void send(BuildContext context, ProductBacklogItem productBacklogItem) {
-    ProductBacklogItemService().send(ProductBacklogItemRequest(
-      story_point: productBacklogItem.storyPoint,
+    productBacklogItemService().send(ProductBacklogItemRequest(
+      storyPoint: productBacklogItem.storyPoint,
       name: productBacklogItem.name,
-      confident_degree: productBacklogItem.confidentDegree,
+      confidentDegree: productBacklogItem.confidentDegree,
     ));
     // ダイアログを閉じる
     Navigator.pop(context);

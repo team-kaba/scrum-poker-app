@@ -18,11 +18,13 @@ class _$ProductBacklogItemRequestTearOff {
 
 // ignore: unused_element
   _ProductBacklogItemRequest call(
-      {String story_point, String name, int confident_degree}) {
+      {@JsonKey(name: 'story_point') String storyPoint,
+      String name,
+      @JsonKey(name: 'confident_degree') int confidentDegree}) {
     return _ProductBacklogItemRequest(
-      story_point: story_point,
+      storyPoint: storyPoint,
       name: name,
-      confident_degree: confident_degree,
+      confidentDegree: confidentDegree,
     );
   }
 }
@@ -31,9 +33,11 @@ class _$ProductBacklogItemRequestTearOff {
 const $ProductBacklogItemRequest = _$ProductBacklogItemRequestTearOff();
 
 mixin _$ProductBacklogItemRequest {
-  String get story_point;
+  @JsonKey(name: 'story_point')
+  String get storyPoint;
   String get name;
-  int get confident_degree;
+  @JsonKey(name: 'confident_degree')
+  int get confidentDegree;
 
   Map<String, dynamic> toJson();
   $ProductBacklogItemRequestCopyWith<ProductBacklogItemRequest> get copyWith;
@@ -43,7 +47,10 @@ abstract class $ProductBacklogItemRequestCopyWith<$Res> {
   factory $ProductBacklogItemRequestCopyWith(ProductBacklogItemRequest value,
           $Res Function(ProductBacklogItemRequest) then) =
       _$ProductBacklogItemRequestCopyWithImpl<$Res>;
-  $Res call({String story_point, String name, int confident_degree});
+  $Res call(
+      {@JsonKey(name: 'story_point') String storyPoint,
+      String name,
+      @JsonKey(name: 'confident_degree') int confidentDegree});
 }
 
 class _$ProductBacklogItemRequestCopyWithImpl<$Res>
@@ -56,17 +63,17 @@ class _$ProductBacklogItemRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object story_point = freezed,
+    Object storyPoint = freezed,
     Object name = freezed,
-    Object confident_degree = freezed,
+    Object confidentDegree = freezed,
   }) {
     return _then(_value.copyWith(
-      story_point:
-          story_point == freezed ? _value.story_point : story_point as String,
+      storyPoint:
+          storyPoint == freezed ? _value.storyPoint : storyPoint as String,
       name: name == freezed ? _value.name : name as String,
-      confident_degree: confident_degree == freezed
-          ? _value.confident_degree
-          : confident_degree as int,
+      confidentDegree: confidentDegree == freezed
+          ? _value.confidentDegree
+          : confidentDegree as int,
     ));
   }
 }
@@ -77,7 +84,10 @@ abstract class _$ProductBacklogItemRequestCopyWith<$Res>
           $Res Function(_ProductBacklogItemRequest) then) =
       __$ProductBacklogItemRequestCopyWithImpl<$Res>;
   @override
-  $Res call({String story_point, String name, int confident_degree});
+  $Res call(
+      {@JsonKey(name: 'story_point') String storyPoint,
+      String name,
+      @JsonKey(name: 'confident_degree') int confidentDegree});
 }
 
 class __$ProductBacklogItemRequestCopyWithImpl<$Res>
@@ -93,17 +103,17 @@ class __$ProductBacklogItemRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object story_point = freezed,
+    Object storyPoint = freezed,
     Object name = freezed,
-    Object confident_degree = freezed,
+    Object confidentDegree = freezed,
   }) {
     return _then(_ProductBacklogItemRequest(
-      story_point:
-          story_point == freezed ? _value.story_point : story_point as String,
+      storyPoint:
+          storyPoint == freezed ? _value.storyPoint : storyPoint as String,
       name: name == freezed ? _value.name : name as String,
-      confident_degree: confident_degree == freezed
-          ? _value.confident_degree
-          : confident_degree as int,
+      confidentDegree: confidentDegree == freezed
+          ? _value.confidentDegree
+          : confidentDegree as int,
     ));
   }
 }
@@ -113,21 +123,25 @@ class _$_ProductBacklogItemRequest
     with DiagnosticableTreeMixin
     implements _ProductBacklogItemRequest {
   const _$_ProductBacklogItemRequest(
-      {this.story_point, this.name, this.confident_degree});
+      {@JsonKey(name: 'story_point') this.storyPoint,
+      this.name,
+      @JsonKey(name: 'confident_degree') this.confidentDegree});
 
   factory _$_ProductBacklogItemRequest.fromJson(Map<String, dynamic> json) =>
       _$_$_ProductBacklogItemRequestFromJson(json);
 
   @override
-  final String story_point;
+  @JsonKey(name: 'story_point')
+  final String storyPoint;
   @override
   final String name;
   @override
-  final int confident_degree;
+  @JsonKey(name: 'confident_degree')
+  final int confidentDegree;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProductBacklogItemRequest(story_point: $story_point, name: $name, confident_degree: $confident_degree)';
+    return 'ProductBacklogItemRequest(storyPoint: $storyPoint, name: $name, confidentDegree: $confidentDegree)';
   }
 
   @override
@@ -135,31 +149,31 @@ class _$_ProductBacklogItemRequest
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ProductBacklogItemRequest'))
-      ..add(DiagnosticsProperty('story_point', story_point))
+      ..add(DiagnosticsProperty('storyPoint', storyPoint))
       ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('confident_degree', confident_degree));
+      ..add(DiagnosticsProperty('confidentDegree', confidentDegree));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ProductBacklogItemRequest &&
-            (identical(other.story_point, story_point) ||
+            (identical(other.storyPoint, storyPoint) ||
                 const DeepCollectionEquality()
-                    .equals(other.story_point, story_point)) &&
+                    .equals(other.storyPoint, storyPoint)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.confident_degree, confident_degree) ||
+            (identical(other.confidentDegree, confidentDegree) ||
                 const DeepCollectionEquality()
-                    .equals(other.confident_degree, confident_degree)));
+                    .equals(other.confidentDegree, confidentDegree)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(story_point) ^
+      const DeepCollectionEquality().hash(storyPoint) ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(confident_degree);
+      const DeepCollectionEquality().hash(confidentDegree);
 
   @override
   _$ProductBacklogItemRequestCopyWith<_ProductBacklogItemRequest>
@@ -175,19 +189,22 @@ class _$_ProductBacklogItemRequest
 
 abstract class _ProductBacklogItemRequest implements ProductBacklogItemRequest {
   const factory _ProductBacklogItemRequest(
-      {String story_point,
-      String name,
-      int confident_degree}) = _$_ProductBacklogItemRequest;
+          {@JsonKey(name: 'story_point') String storyPoint,
+          String name,
+          @JsonKey(name: 'confident_degree') int confidentDegree}) =
+      _$_ProductBacklogItemRequest;
 
   factory _ProductBacklogItemRequest.fromJson(Map<String, dynamic> json) =
       _$_ProductBacklogItemRequest.fromJson;
 
   @override
-  String get story_point;
+  @JsonKey(name: 'story_point')
+  String get storyPoint;
   @override
   String get name;
   @override
-  int get confident_degree;
+  @JsonKey(name: 'confident_degree')
+  int get confidentDegree;
   @override
   _$ProductBacklogItemRequestCopyWith<_ProductBacklogItemRequest> get copyWith;
 }
