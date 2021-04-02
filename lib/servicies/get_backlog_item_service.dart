@@ -9,25 +9,39 @@ part 'get_backlog_item_service.g.dart';
 @freezed
 abstract class GetBacklogItemResponse with _$GetBacklogItemResponse {
   const factory GetBacklogItemResponse({
-    String story_point,
-    String name,
-    int confident_degree,
+    List<GetBacklogItem> backlogItems,
   }) = _GetBacklogItemResponse;
 
   factory GetBacklogItemResponse.fromJson(Map<String, dynamic> json) =>
       _$GetBacklogItemResponseFromJson(json);
 }
 
-class GetBacklogItemServise {
-  final url = 'http:';
-  Future<List<GetBacklogItemResponse>> getBacklogItems() async {
-    final client = http.Client();
-    final String url = 'http://localhost:3100/product-backlog-items';
-    final response = await client.get(url);
-    /*final unconfirmedTerms = response['unconfirmedTerms'] as List;
+@freezed
+abstract class GetBacklogItem with _$GetBacklogItem {
+  const factory GetBacklogItem({
+    String story_point,
+    String name,
+    int confident_degree,
+  }) = _GetBacklogItem;
 
-    return response.map((e) {
-      return GetBacklogItemResponse.fromJson(e);
-    }).toList();*/
+  factory GetBacklogItem.fromJson(Map<String, dynamic> json) =>
+      _$GetBacklogItemFromJson(json);
+}
+
+class GetBacklogItemServise {
+  Future<GetBacklogItemResponse> fetch() async {
+    final client = http.Client();
+    // TODO:クエリパラメータの設定
+    final url =
+        Uri.http('localhost:3100', '/product-backlog-items', {'amount': '159'});
+    final response = await client.get(url);
+    final res = jsonDecode(response.body);
+    final backlogItems = res['backlogItems'] as List;
+    return GetBacklogItemResponse(
+      //ここ理解できてない
+      backlogItems: backlogItems.map((e) {
+        return GetBacklogItem.fromJson(e);
+      }).toList(),
+    );
   }
 }
