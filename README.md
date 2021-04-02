@@ -14,3 +14,15 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+Execute the command. When a conflict occurs during code generation and file generation fails.
+```
+flutter pub pub run build_runner build --delete-conflicting-outputs
+```
+
+
+Execute the command. To start the mock server.
+```
+npx @stoplight/prism-cli mock -h 192.168.1.5 -p 3100 /Users/kajiyamaki/works/ScrumPoker/scrumpoker2.yaml
+```
