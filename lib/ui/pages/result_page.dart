@@ -4,9 +4,17 @@ import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:new_scrum_poker/ui/common_components/space_box.dart';
+import 'package:new_scrum_poker/ui/controllers/result_controller.dart';
+import 'package:new_scrum_poker/ui/controllers/result_state.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
+import 'package:provider/provider.dart';
 
 class ResultPage extends StatefulWidget {
-  ResultPage({Key key}) : super(key: key);
+  ResultPage._({Key key}) : super(key: key);
+  static Widget wrapped() {
+    return StateNotifierProvider<ResultController, ResultState>(
+        create: (context) => ResultController(), child: ResultPage._());
+  }
 
   @override
   _ResultPageState createState() => _ResultPageState();
@@ -14,6 +22,16 @@ class ResultPage extends StatefulWidget {
 
 class _ResultPageState extends State<ResultPage> {
   final _contentsBackgroundColor = Colors.teal[100];
+  @override
+  void initState() {
+    super.initState();
+
+    Future(
+      () async {
+        await context.read<ResultController>().getBacklogItems();
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +52,8 @@ class _ResultPageState extends State<ResultPage> {
         ),
         onPressed: () => Navigator.of(context).pop(),
       ),
-      title: Text('Result', style: Theme.of(context).textTheme.headline3),
+      title:
+          Text('Result', style: TextStyle(fontSize: 40, color: Colors.white)),
       centerTitle: true,
       elevation: 0.0,
       brightness: Brightness.light,
@@ -52,51 +71,81 @@ class _ResultPageState extends State<ResultPage> {
     );
   }
 
-  List<int> storyPointList = [3, 2, 3, 1];
-  List<String> confidentList = ['自信あり', '普通', '自信なし', '普通'];
-  List<String> nameList = ['maki', '牧', '巻き', 'カジマキ'];
-
   Widget _buildBubbleList(BuildContext context) {
+    final backlogItems =
+        context.select((ResultState state) => state.backlogItemsViewModel);
     return Expanded(
       child: SizedBox(
         height: double.maxFinite,
-        child: ListView.builder(
+        child: ListView(
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
-          itemCount: storyPointList.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    SpaceBox.height(20),
-                    Text(nameList[index]),
-                    Icon(
-                      Icons.face,
-                      size: 40,
-                    )
-                  ],
-                ),
-                Bubble(
-                  margin: BubbleEdges.only(top: 30, left: 10),
-                  padding: BubbleEdges.all(20),
-                  alignment: Alignment.topLeft,
-                  nip: BubbleNip.leftBottom,
-                  child: Column(
-                    children: <Widget>[
-                      Text('Story Point : ' + storyPointList[index].toString()),
-                      Text(confidentList[index]),
-                    ],
-                  ),
-                  shadowColor: Colors.blueGrey,
-                  elevation: 10,
-                ),
-              ],
-            );
-          },
+          children: [
+            for (final viewModel in backlogItems)
+              _buildResult(context, viewModel),
+          ],
         ),
       ),
     );
+  }
+
+  Widget _buildResult(BuildContext ctx, GetBacklogItemViewModel viewnodel) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Column(
+          children: <Widget>[
+            SpaceBox.height(20),
+            Text(viewnodel.name,
+                style: TextStyle(fontSize: 18, color: Colors.white)),
+            _buildIcon(viewnodel.confidentDegree),
+          ],
+        ),
+        Bubble(
+          margin: BubbleEdges.only(top: 30, left: 20),
+          padding: BubbleEdges.symmetric(horizontal: 50, vertical: 20),
+          alignment: Alignment.topLeft,
+          nip: BubbleNip.leftBottom,
+          child: Text(
+            viewnodel.storyPoint.toString(),
+            style: TextStyle(fontSize: 40, color: Colors.grey[500]),
+          ),
+        ),
+      ],
+    );
+  }
+
+  /// 自信度によって顔のアイコンの表情を変える
+  Widget _buildIcon(int confidentDegree) {
+    const highConfidence = 1;
+    const mediumConfidence = 2;
+    const lowConfidence = 3;
+
+    switch (confidentDegree) {
+      case highConfidence:
+        return Icon(
+          Icons.sentiment_very_satisfied,
+          size: 50,
+          color: Colors.white,
+        );
+      case mediumConfidence:
+        return Icon(
+          Icons.sentiment_neutral,
+          size: 50,
+          color: Colors.white,
+        );
+      case lowConfidence:
+        return Icon(
+          Icons.sentiment_very_dissatisfied,
+          size: 50,
+          color: Colors.white,
+        );
+      default:
+        return Icon(
+          Icons.sentiment_neutral,
+          size: 50,
+          color: Colors.white,
+        );
+    }
   }
 }

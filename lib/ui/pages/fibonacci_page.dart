@@ -4,7 +4,6 @@ import 'package:new_scrum_poker/UI/common_components/space_box.dart';
 
 class FibonacciPage extends StatelessWidget {
   static final _contentsBackgroundColor = Colors.teal[100];
-  String storyPoint = '';
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +79,6 @@ class FibonacciPage extends StatelessWidget {
           ),
         ),
         onTap: () {
-          this.storyPoint = storyPoint;
           showDialog(
               context: context,
               builder: (context) {

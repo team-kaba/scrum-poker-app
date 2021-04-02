@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         '/': (BuildContext context) => FibonacciPage(),
         '/home': (BuildContext context) => FibonacciPage(),
         '/confidence': (BuildContext context) => ConfidenceDialog(),
-        '/result': (BuildContext context) => ResultPage(),
+        '/result': (BuildContext context) => ResultPage.wrapped(),
       },
     );
   }
