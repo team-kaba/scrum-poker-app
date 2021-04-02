@@ -3,12 +3,18 @@ import 'dart:ui';
 import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:new_scrum_poker/servicies/get_backlog_item_service.dart';
 import 'package:new_scrum_poker/ui/common_components/space_box.dart';
+import 'package:new_scrum_poker/ui/controllers/result_controller.dart';
+import 'package:new_scrum_poker/ui/controllers/result_state.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
 
 class ResultPage extends StatefulWidget {
-  ResultPage({Key key}) : super(key: key);
+  ResultPage._({Key key}) : super(key: key);
+  static Widget wrapped() {
+    return StateNotifierProvider<ResultController, ResultState>(
+        create: (context) => ResultController(), child: ResultPage._());
+  }
 
   @override
   _ResultPageState createState() => _ResultPageState();
@@ -16,33 +22,22 @@ class ResultPage extends StatefulWidget {
 
 class _ResultPageState extends State<ResultPage> {
   final _contentsBackgroundColor = Colors.teal[100];
-  bool _isLoading = false;
-
   @override
   void initState() {
-    Future.delayed(Duration.zero).then((_) async {
-      setState(() {
-        _isLoading = true;
-      });
-      // TODO: controllerクラスでserviceクラスを呼び出す。
-      // ローディングも？State管理だめ
-      //dynamic response = await GetBacklogItemServise().getBacklogItems();
-      setState(() {
-        _isLoading = false;
-      });
-    });
     super.initState();
+
+    Future(
+      () async {
+        await context.read<ResultController>().getBacklogItems();
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(context),
-      body: _isLoading
-          ? Center(
-              child: CircularProgressIndicator(),
-            )
-          : _buildBody(context),
+      body: _buildBody(context),
     );
   }
 
@@ -76,59 +71,81 @@ class _ResultPageState extends State<ResultPage> {
     );
   }
 
-  // TODO:APIのレスポンスをListに入れる
-  List<int> storyPointList = [3, 2, 3, 1];
-  List<String> confidentList = ['自信あり', '普通', '自信なし', '普通'];
-  List<String> nameList = ['maki', '牧', '巻き', 'カジマキ'];
-
   Widget _buildBubbleList(BuildContext context) {
+    final backlogItems =
+        context.select((ResultState state) => state.backlogItemsViewModel);
     return Expanded(
       child: SizedBox(
         height: double.maxFinite,
-        child: ListView.builder(
+        child: ListView(
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
-          itemCount: storyPointList.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    SpaceBox.height(20),
-                    Text(nameList[index],
-                        style: TextStyle(fontSize: 18, color: Colors.white)),
-                    Icon(
-                      // TODO:confident_degreeの値に応じて顔文字のアイコンを変える
-                      // icons:sentiment_very_satisfied = smile, sentiment_neutral = neutral, sentiment_very_dissatisfied = bad
-                      Icons.sentiment_very_dissatisfied,
-                      size: 50,
-                      color: Colors.white,
-                    )
-                  ],
-                ),
-                Bubble(
-                  margin: BubbleEdges.only(top: 30, left: 20),
-                  padding: BubbleEdges.symmetric(horizontal: 50, vertical: 20),
-                  alignment: Alignment.topLeft,
-                  nip: BubbleNip.leftBottom,
-                  child: Column(
-                    children: <Widget>[
-                      Text(
-                        storyPointList[index].toString(),
-                        style: TextStyle(fontSize: 40, color: Colors.grey[500]),
-                      ),
-                      // Text(confidentList[index]),
-                    ],
-                  ),
-                  // shadowColor: Colors.blueGrey,
-                  // elevation: 0,
-                ),
-              ],
-            );
-          },
+          children: [
+            for (final viewModel in backlogItems)
+              _buildResult(context, viewModel),
+          ],
         ),
       ),
     );
+  }
+
+  Widget _buildResult(BuildContext ctx, GetBacklogItemViewModel viewnodel) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Column(
+          children: <Widget>[
+            SpaceBox.height(20),
+            Text(viewnodel.name,
+                style: TextStyle(fontSize: 18, color: Colors.white)),
+            _buildIcon(viewnodel.confidentDegree),
+          ],
+        ),
+        Bubble(
+          margin: BubbleEdges.only(top: 30, left: 20),
+          padding: BubbleEdges.symmetric(horizontal: 50, vertical: 20),
+          alignment: Alignment.topLeft,
+          nip: BubbleNip.leftBottom,
+          child: Text(
+            viewnodel.storyPoint.toString(),
+            style: TextStyle(fontSize: 40, color: Colors.grey[500]),
+          ),
+        ),
+      ],
+    );
+  }
+
+  /// 自信度によって顔のアイコンの表情を変える
+  Widget _buildIcon(int confidentDegree) {
+    const highConfidence = 1;
+    const mediumConfidence = 2;
+    const lowConfidence = 3;
+
+    switch (confidentDegree) {
+      case highConfidence:
+        return Icon(
+          Icons.sentiment_very_satisfied,
+          size: 50,
+          color: Colors.white,
+        );
+      case mediumConfidence:
+        return Icon(
+          Icons.sentiment_neutral,
+          size: 50,
+          color: Colors.white,
+        );
+      case lowConfidence:
+        return Icon(
+          Icons.sentiment_very_dissatisfied,
+          size: 50,
+          color: Colors.white,
+        );
+      default:
+        return Icon(
+          Icons.sentiment_neutral,
+          size: 50,
+          color: Colors.white,
+        );
+    }
   }
 }
