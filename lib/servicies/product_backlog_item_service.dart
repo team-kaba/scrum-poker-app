@@ -11,7 +11,9 @@ class ProductBacklogItemService {
   Future<void> send(ProductBacklogItemRequest request) async {
     final client = http.Client();
     final String url = 'http://192.168.1.5:3100/product-backlog-item';
-    await client.post(url, body: json.encode(request));
+    await client.post(url,
+        body: json.encode(request),
+        headers: {"Content-Type": "application/json"});
   }
 }
 
