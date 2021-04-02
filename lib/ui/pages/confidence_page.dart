@@ -11,12 +11,13 @@ class ConfidenceDialog extends StatefulWidget {
   _ConfidenceDialogState createState() => _ConfidenceDialogState();
 }
 
+// TODO:人数を入力するフォームorドロップダウンが必要
 class _ConfidenceDialogState extends State<ConfidenceDialog> {
   static final _contentsBackgroundColor = Colors.teal[100];
   final _radioFormKey = GlobalKey<FormState>();
   final _textFormKey = GlobalKey<FormState>();
 
-  ProductBacklogItem _form = ProductBacklogItem();
+  ProductBacklogItemForm _form = ProductBacklogItemForm();
   var _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -72,8 +73,8 @@ class _ConfidenceDialogState extends State<ConfidenceDialog> {
     );
   }
 
-  List<String> _confidentList = ['自信あり', '普通', '自信なし'];
-  List<int> _confidentValueList = [1, 2, 3];
+  final List<String> _confidentList = ['自信あり', '普通', '自信なし'];
+  final List<int> _confidentValueList = [1, 2, 3];
   int _currentConfident = 2;
 
   Widget _buildRadioButtonList() {
@@ -93,13 +94,11 @@ class _ConfidenceDialogState extends State<ConfidenceDialog> {
               setState(
                 () {
                   _currentConfident = val;
-                  print(_currentConfident);
                 },
               );
             },
             onSaved: (val) {
               _form.confidentDegree = _currentConfident;
-              print(_form.confidentDegree);
             },
           );
         },
