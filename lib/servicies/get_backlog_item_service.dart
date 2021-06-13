@@ -1,7 +1,7 @@
 import 'dart:convert';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter/foundation.dart'; // *.freezed.dartで必要なのでimportしておく
 
 part 'get_backlog_item_service.freezed.dart';
 part 'get_backlog_item_service.g.dart';
@@ -9,7 +9,7 @@ part 'get_backlog_item_service.g.dart';
 @freezed
 abstract class GetBacklogItemResponse with _$GetBacklogItemResponse {
   const factory GetBacklogItemResponse({
-    List<GetBacklogItem> backlogItems,
+    @Default([]) List<GetBacklogItem> backlogItems,
   }) = _GetBacklogItemResponse;
 
   factory GetBacklogItemResponse.fromJson(Map<String, dynamic> json) =>
@@ -19,16 +19,16 @@ abstract class GetBacklogItemResponse with _$GetBacklogItemResponse {
 @freezed
 abstract class GetBacklogItem with _$GetBacklogItem {
   const factory GetBacklogItem({
-    String story_point,
-    String name,
-    int confident_degree,
+    @Default('') String story_point,
+    @Default('') String name,
+    @Default(0) int confident_degree,
   }) = _GetBacklogItem;
 
   factory GetBacklogItem.fromJson(Map<String, dynamic> json) =>
       _$GetBacklogItemFromJson(json);
 }
 
-class GetBacklogItemServise {
+class GetBacklogItemService {
   Future<GetBacklogItemResponse> fetch() async {
     final client = http.Client();
     // TODO:クエリパラメータの設定

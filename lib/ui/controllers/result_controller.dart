@@ -6,7 +6,7 @@ class ResultController extends StateNotifier<ResultState> {
   ResultController() : super(ResultState());
 
   Future<void> getBacklogItems() async {
-    final response = await GetBacklogItemServise().fetch();
+    final response = await GetBacklogItemService().fetch();
     final getBacklogItems = response.backlogItems;
     // ここ理解できていない（.map()メソッドがわかっていない）
     final viewModels = getBacklogItems
