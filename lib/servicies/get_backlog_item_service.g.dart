@@ -9,11 +9,10 @@ part of 'get_backlog_item_service.dart';
 _$_GetBacklogItemResponse _$_$_GetBacklogItemResponseFromJson(
     Map<String, dynamic> json) {
   return _$_GetBacklogItemResponse(
-    backlogItems: (json['backlogItems'] as List)
-        ?.map((e) => e == null
-            ? null
-            : GetBacklogItem.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    backlogItems: (json['backlogItems'] as List<dynamic>?)
+            ?.map((e) => GetBacklogItem.fromJson(e as Map<String, dynamic>))
+            .toList() ??
+        [],
   );
 }
 
@@ -25,9 +24,9 @@ Map<String, dynamic> _$_$_GetBacklogItemResponseToJson(
 
 _$_GetBacklogItem _$_$_GetBacklogItemFromJson(Map<String, dynamic> json) {
   return _$_GetBacklogItem(
-    story_point: json['story_point'] as String,
-    name: json['name'] as String,
-    confident_degree: json['confident_degree'] as int,
+    story_point: json['story_point'] as String? ?? '',
+    name: json['name'] as String? ?? '',
+    confident_degree: json['confident_degree'] as int? ?? 0,
   );
 }
 

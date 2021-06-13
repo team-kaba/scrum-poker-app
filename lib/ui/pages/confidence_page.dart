@@ -4,7 +4,10 @@ import 'package:new_scrum_poker/ui/common_components/radiobutton.dart';
 import 'package:new_scrum_poker/ui/controllers/confidence_controller.dart';
 
 class ConfidenceDialog extends StatefulWidget {
-  ConfidenceDialog({this.storyPoint, Key key}) : super(key: key);
+  ConfidenceDialog({
+    required this.storyPoint,
+    Key? key,
+  }) : super(key: key);
   final String storyPoint;
 
   @override
@@ -17,7 +20,11 @@ class _ConfidenceDialogState extends State<ConfidenceDialog> {
   final _radioFormKey = GlobalKey<FormState>();
   final _textFormKey = GlobalKey<FormState>();
 
-  ProductBacklogItemForm _form = ProductBacklogItemForm();
+  ProductBacklogItemForm _form = ProductBacklogItemForm(
+    confidentDegree: 0,
+    name: '',
+    storyPoint: '',
+  );
   var _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -145,8 +152,8 @@ class _ConfidenceDialogState extends State<ConfidenceDialog> {
         shape: const StadiumBorder(),
         onPressed: () {
           _form.storyPoint = widget.storyPoint;
-          _radioFormKey.currentState.save();
-          _textFormKey.currentState.save();
+          _radioFormKey.currentState!.save();
+          _textFormKey.currentState!.save();
           ConfidenceController().send(context, _form);
         },
       ),

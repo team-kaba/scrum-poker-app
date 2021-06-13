@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'get_backlog_item_service.dart';
 
@@ -8,32 +8,44 @@ part of 'get_backlog_item_service.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 GetBacklogItemResponse _$GetBacklogItemResponseFromJson(
     Map<String, dynamic> json) {
   return _GetBacklogItemResponse.fromJson(json);
 }
 
+/// @nodoc
 class _$GetBacklogItemResponseTearOff {
   const _$GetBacklogItemResponseTearOff();
 
-// ignore: unused_element
-  _GetBacklogItemResponse call({List<GetBacklogItem> backlogItems}) {
+  _GetBacklogItemResponse call({List<GetBacklogItem> backlogItems = const []}) {
     return _GetBacklogItemResponse(
       backlogItems: backlogItems,
     );
   }
+
+  GetBacklogItemResponse fromJson(Map<String, Object> json) {
+    return GetBacklogItemResponse.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $GetBacklogItemResponse = _$GetBacklogItemResponseTearOff();
 
+/// @nodoc
 mixin _$GetBacklogItemResponse {
-  List<GetBacklogItem> get backlogItems;
+  List<GetBacklogItem> get backlogItems => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $GetBacklogItemResponseCopyWith<GetBacklogItemResponse> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GetBacklogItemResponseCopyWith<GetBacklogItemResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $GetBacklogItemResponseCopyWith<$Res> {
   factory $GetBacklogItemResponseCopyWith(GetBacklogItemResponse value,
           $Res Function(GetBacklogItemResponse) then) =
@@ -41,6 +53,7 @@ abstract class $GetBacklogItemResponseCopyWith<$Res> {
   $Res call({List<GetBacklogItem> backlogItems});
 }
 
+/// @nodoc
 class _$GetBacklogItemResponseCopyWithImpl<$Res>
     implements $GetBacklogItemResponseCopyWith<$Res> {
   _$GetBacklogItemResponseCopyWithImpl(this._value, this._then);
@@ -51,16 +64,18 @@ class _$GetBacklogItemResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object backlogItems = freezed,
+    Object? backlogItems = freezed,
   }) {
     return _then(_value.copyWith(
       backlogItems: backlogItems == freezed
           ? _value.backlogItems
-          : backlogItems as List<GetBacklogItem>,
+          : backlogItems // ignore: cast_nullable_to_non_nullable
+              as List<GetBacklogItem>,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$GetBacklogItemResponseCopyWith<$Res>
     implements $GetBacklogItemResponseCopyWith<$Res> {
   factory _$GetBacklogItemResponseCopyWith(_GetBacklogItemResponse value,
@@ -70,6 +85,7 @@ abstract class _$GetBacklogItemResponseCopyWith<$Res>
   $Res call({List<GetBacklogItem> backlogItems});
 }
 
+/// @nodoc
 class __$GetBacklogItemResponseCopyWithImpl<$Res>
     extends _$GetBacklogItemResponseCopyWithImpl<$Res>
     implements _$GetBacklogItemResponseCopyWith<$Res> {
@@ -82,39 +98,32 @@ class __$GetBacklogItemResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object backlogItems = freezed,
+    Object? backlogItems = freezed,
   }) {
     return _then(_GetBacklogItemResponse(
       backlogItems: backlogItems == freezed
           ? _value.backlogItems
-          : backlogItems as List<GetBacklogItem>,
+          : backlogItems // ignore: cast_nullable_to_non_nullable
+              as List<GetBacklogItem>,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
-class _$_GetBacklogItemResponse
-    with DiagnosticableTreeMixin
-    implements _GetBacklogItemResponse {
-  const _$_GetBacklogItemResponse({this.backlogItems});
+class _$_GetBacklogItemResponse implements _GetBacklogItemResponse {
+  const _$_GetBacklogItemResponse({this.backlogItems = const []});
 
   factory _$_GetBacklogItemResponse.fromJson(Map<String, dynamic> json) =>
       _$_$_GetBacklogItemResponseFromJson(json);
 
+  @JsonKey(defaultValue: const [])
   @override
   final List<GetBacklogItem> backlogItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'GetBacklogItemResponse(backlogItems: $backlogItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'GetBacklogItemResponse'))
-      ..add(DiagnosticsProperty('backlogItems', backlogItems));
   }
 
   @override
@@ -130,6 +139,7 @@ class _$_GetBacklogItemResponse
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(backlogItems);
 
+  @JsonKey(ignore: true)
   @override
   _$GetBacklogItemResponseCopyWith<_GetBacklogItemResponse> get copyWith =>
       __$GetBacklogItemResponseCopyWithImpl<_GetBacklogItemResponse>(
@@ -149,41 +159,51 @@ abstract class _GetBacklogItemResponse implements GetBacklogItemResponse {
       _$_GetBacklogItemResponse.fromJson;
 
   @override
-  List<GetBacklogItem> get backlogItems;
+  List<GetBacklogItem> get backlogItems => throw _privateConstructorUsedError;
   @override
-  _$GetBacklogItemResponseCopyWith<_GetBacklogItemResponse> get copyWith;
+  @JsonKey(ignore: true)
+  _$GetBacklogItemResponseCopyWith<_GetBacklogItemResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 GetBacklogItem _$GetBacklogItemFromJson(Map<String, dynamic> json) {
   return _GetBacklogItem.fromJson(json);
 }
 
+/// @nodoc
 class _$GetBacklogItemTearOff {
   const _$GetBacklogItemTearOff();
 
-// ignore: unused_element
   _GetBacklogItem call(
-      {String story_point, String name, int confident_degree}) {
+      {String story_point = '', String name = '', int confident_degree = 0}) {
     return _GetBacklogItem(
       story_point: story_point,
       name: name,
       confident_degree: confident_degree,
     );
   }
+
+  GetBacklogItem fromJson(Map<String, Object> json) {
+    return GetBacklogItem.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $GetBacklogItem = _$GetBacklogItemTearOff();
 
+/// @nodoc
 mixin _$GetBacklogItem {
-  String get story_point;
-  String get name;
-  int get confident_degree;
+  String get story_point => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  int get confident_degree => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $GetBacklogItemCopyWith<GetBacklogItem> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GetBacklogItemCopyWith<GetBacklogItem> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $GetBacklogItemCopyWith<$Res> {
   factory $GetBacklogItemCopyWith(
           GetBacklogItem value, $Res Function(GetBacklogItem) then) =
@@ -191,6 +211,7 @@ abstract class $GetBacklogItemCopyWith<$Res> {
   $Res call({String story_point, String name, int confident_degree});
 }
 
+/// @nodoc
 class _$GetBacklogItemCopyWithImpl<$Res>
     implements $GetBacklogItemCopyWith<$Res> {
   _$GetBacklogItemCopyWithImpl(this._value, this._then);
@@ -201,21 +222,28 @@ class _$GetBacklogItemCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object story_point = freezed,
-    Object name = freezed,
-    Object confident_degree = freezed,
+    Object? story_point = freezed,
+    Object? name = freezed,
+    Object? confident_degree = freezed,
   }) {
     return _then(_value.copyWith(
-      story_point:
-          story_point == freezed ? _value.story_point : story_point as String,
-      name: name == freezed ? _value.name : name as String,
+      story_point: story_point == freezed
+          ? _value.story_point
+          : story_point // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       confident_degree: confident_degree == freezed
           ? _value.confident_degree
-          : confident_degree as int,
+          : confident_degree // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$GetBacklogItemCopyWith<$Res>
     implements $GetBacklogItemCopyWith<$Res> {
   factory _$GetBacklogItemCopyWith(
@@ -225,6 +253,7 @@ abstract class _$GetBacklogItemCopyWith<$Res>
   $Res call({String story_point, String name, int confident_degree});
 }
 
+/// @nodoc
 class __$GetBacklogItemCopyWithImpl<$Res>
     extends _$GetBacklogItemCopyWithImpl<$Res>
     implements _$GetBacklogItemCopyWith<$Res> {
@@ -237,50 +266,49 @@ class __$GetBacklogItemCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object story_point = freezed,
-    Object name = freezed,
-    Object confident_degree = freezed,
+    Object? story_point = freezed,
+    Object? name = freezed,
+    Object? confident_degree = freezed,
   }) {
     return _then(_GetBacklogItem(
-      story_point:
-          story_point == freezed ? _value.story_point : story_point as String,
-      name: name == freezed ? _value.name : name as String,
+      story_point: story_point == freezed
+          ? _value.story_point
+          : story_point // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       confident_degree: confident_degree == freezed
           ? _value.confident_degree
-          : confident_degree as int,
+          : confident_degree // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
-class _$_GetBacklogItem
-    with DiagnosticableTreeMixin
-    implements _GetBacklogItem {
-  const _$_GetBacklogItem({this.story_point, this.name, this.confident_degree});
+class _$_GetBacklogItem implements _GetBacklogItem {
+  const _$_GetBacklogItem(
+      {this.story_point = '', this.name = '', this.confident_degree = 0});
 
   factory _$_GetBacklogItem.fromJson(Map<String, dynamic> json) =>
       _$_$_GetBacklogItemFromJson(json);
 
+  @JsonKey(defaultValue: '')
   @override
   final String story_point;
+  @JsonKey(defaultValue: '')
   @override
   final String name;
+  @JsonKey(defaultValue: 0)
   @override
   final int confident_degree;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'GetBacklogItem(story_point: $story_point, name: $name, confident_degree: $confident_degree)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'GetBacklogItem'))
-      ..add(DiagnosticsProperty('story_point', story_point))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('confident_degree', confident_degree));
   }
 
   @override
@@ -304,6 +332,7 @@ class _$_GetBacklogItem
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(confident_degree);
 
+  @JsonKey(ignore: true)
   @override
   _$GetBacklogItemCopyWith<_GetBacklogItem> get copyWith =>
       __$GetBacklogItemCopyWithImpl<_GetBacklogItem>(this, _$identity);
@@ -324,11 +353,13 @@ abstract class _GetBacklogItem implements GetBacklogItem {
       _$_GetBacklogItem.fromJson;
 
   @override
-  String get story_point;
+  String get story_point => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  int get confident_degree;
+  int get confident_degree => throw _privateConstructorUsedError;
   @override
-  _$GetBacklogItemCopyWith<_GetBacklogItem> get copyWith;
+  @JsonKey(ignore: true)
+  _$GetBacklogItemCopyWith<_GetBacklogItem> get copyWith =>
+      throw _privateConstructorUsedError;
 }

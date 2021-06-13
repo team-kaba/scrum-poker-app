@@ -13,8 +13,8 @@ abstract class ResultState with _$ResultState {
 @freezed
 abstract class GetBacklogItemViewModel with _$GetBacklogItemViewModel {
   const factory GetBacklogItemViewModel({
-    String storyPoint,
-    String name,
-    int confidentDegree,
+    @Default('') String storyPoint,
+    @Default('') String name,
+    @Default(0) int confidentDegree,
   }) = _GetBacklogItemViewModel;
 }

@@ -18,7 +18,11 @@ class ConfidenceController with ChangeNotifier {
 
 // FIXME:このクラスを書く場所はここじゃない気がする
 class ProductBacklogItemForm {
-  ProductBacklogItemForm({this.storyPoint, this.name, this.confidentDegree});
+  ProductBacklogItemForm({
+    required this.storyPoint,
+    required this.name,
+    required this.confidentDegree,
+  });
   String storyPoint;
   String name;
   int confidentDegree;

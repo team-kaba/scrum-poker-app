@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'product_backlog_item_service.dart';
 
@@ -8,37 +8,49 @@ part of 'product_backlog_item_service.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 ProductBacklogItemRequest _$ProductBacklogItemRequestFromJson(
     Map<String, dynamic> json) {
   return _ProductBacklogItemRequest.fromJson(json);
 }
 
+/// @nodoc
 class _$ProductBacklogItemRequestTearOff {
   const _$ProductBacklogItemRequestTearOff();
 
-// ignore: unused_element
   _ProductBacklogItemRequest call(
-      {String story_point, String name, int confident_degree}) {
+      {String story_point = '', String name = '', int confident_degree = 0}) {
     return _ProductBacklogItemRequest(
       story_point: story_point,
       name: name,
       confident_degree: confident_degree,
     );
   }
+
+  ProductBacklogItemRequest fromJson(Map<String, Object> json) {
+    return ProductBacklogItemRequest.fromJson(json);
+  }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $ProductBacklogItemRequest = _$ProductBacklogItemRequestTearOff();
 
+/// @nodoc
 mixin _$ProductBacklogItemRequest {
-  String get story_point;
-  String get name;
-  int get confident_degree;
+  String get story_point => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  int get confident_degree => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $ProductBacklogItemRequestCopyWith<ProductBacklogItemRequest> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ProductBacklogItemRequestCopyWith<ProductBacklogItemRequest> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $ProductBacklogItemRequestCopyWith<$Res> {
   factory $ProductBacklogItemRequestCopyWith(ProductBacklogItemRequest value,
           $Res Function(ProductBacklogItemRequest) then) =
@@ -46,6 +58,7 @@ abstract class $ProductBacklogItemRequestCopyWith<$Res> {
   $Res call({String story_point, String name, int confident_degree});
 }
 
+/// @nodoc
 class _$ProductBacklogItemRequestCopyWithImpl<$Res>
     implements $ProductBacklogItemRequestCopyWith<$Res> {
   _$ProductBacklogItemRequestCopyWithImpl(this._value, this._then);
@@ -56,21 +69,28 @@ class _$ProductBacklogItemRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object story_point = freezed,
-    Object name = freezed,
-    Object confident_degree = freezed,
+    Object? story_point = freezed,
+    Object? name = freezed,
+    Object? confident_degree = freezed,
   }) {
     return _then(_value.copyWith(
-      story_point:
-          story_point == freezed ? _value.story_point : story_point as String,
-      name: name == freezed ? _value.name : name as String,
+      story_point: story_point == freezed
+          ? _value.story_point
+          : story_point // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       confident_degree: confident_degree == freezed
           ? _value.confident_degree
-          : confident_degree as int,
+          : confident_degree // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$ProductBacklogItemRequestCopyWith<$Res>
     implements $ProductBacklogItemRequestCopyWith<$Res> {
   factory _$ProductBacklogItemRequestCopyWith(_ProductBacklogItemRequest value,
@@ -80,6 +100,7 @@ abstract class _$ProductBacklogItemRequestCopyWith<$Res>
   $Res call({String story_point, String name, int confident_degree});
 }
 
+/// @nodoc
 class __$ProductBacklogItemRequestCopyWithImpl<$Res>
     extends _$ProductBacklogItemRequestCopyWithImpl<$Res>
     implements _$ProductBacklogItemRequestCopyWith<$Res> {
@@ -93,51 +114,49 @@ class __$ProductBacklogItemRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object story_point = freezed,
-    Object name = freezed,
-    Object confident_degree = freezed,
+    Object? story_point = freezed,
+    Object? name = freezed,
+    Object? confident_degree = freezed,
   }) {
     return _then(_ProductBacklogItemRequest(
-      story_point:
-          story_point == freezed ? _value.story_point : story_point as String,
-      name: name == freezed ? _value.name : name as String,
+      story_point: story_point == freezed
+          ? _value.story_point
+          : story_point // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       confident_degree: confident_degree == freezed
           ? _value.confident_degree
-          : confident_degree as int,
+          : confident_degree // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
 @JsonSerializable()
-class _$_ProductBacklogItemRequest
-    with DiagnosticableTreeMixin
-    implements _ProductBacklogItemRequest {
+class _$_ProductBacklogItemRequest implements _ProductBacklogItemRequest {
   const _$_ProductBacklogItemRequest(
-      {this.story_point, this.name, this.confident_degree});
+      {this.story_point = '', this.name = '', this.confident_degree = 0});
 
   factory _$_ProductBacklogItemRequest.fromJson(Map<String, dynamic> json) =>
       _$_$_ProductBacklogItemRequestFromJson(json);
 
+  @JsonKey(defaultValue: '')
   @override
   final String story_point;
+  @JsonKey(defaultValue: '')
   @override
   final String name;
+  @JsonKey(defaultValue: 0)
   @override
   final int confident_degree;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ProductBacklogItemRequest(story_point: $story_point, name: $name, confident_degree: $confident_degree)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProductBacklogItemRequest'))
-      ..add(DiagnosticsProperty('story_point', story_point))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('confident_degree', confident_degree));
   }
 
   @override
@@ -161,6 +180,7 @@ class _$_ProductBacklogItemRequest
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(confident_degree);
 
+  @JsonKey(ignore: true)
   @override
   _$ProductBacklogItemRequestCopyWith<_ProductBacklogItemRequest>
       get copyWith =>
@@ -183,11 +203,13 @@ abstract class _ProductBacklogItemRequest implements ProductBacklogItemRequest {
       _$_ProductBacklogItemRequest.fromJson;
 
   @override
-  String get story_point;
+  String get story_point => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  int get confident_degree;
+  int get confident_degree => throw _privateConstructorUsedError;
   @override
-  _$ProductBacklogItemRequestCopyWith<_ProductBacklogItemRequest> get copyWith;
+  @JsonKey(ignore: true)
+  _$ProductBacklogItemRequestCopyWith<_ProductBacklogItemRequest>
+      get copyWith => throw _privateConstructorUsedError;
 }

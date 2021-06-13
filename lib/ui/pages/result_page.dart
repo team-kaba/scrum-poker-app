@@ -3,14 +3,14 @@ import 'dart:ui';
 import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:new_scrum_poker/ui/common_components/space_box.dart';
 import 'package:new_scrum_poker/ui/controllers/result_controller.dart';
 import 'package:new_scrum_poker/ui/controllers/result_state.dart';
-import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
 
 class ResultPage extends StatefulWidget {
-  ResultPage._({Key key}) : super(key: key);
+  ResultPage._({Key? key}) : super(key: key);
   static Widget wrapped() {
     return StateNotifierProvider<ResultController, ResultState>(
         create: (context) => ResultController(), child: ResultPage._());
@@ -41,7 +41,7 @@ class _ResultPageState extends State<ResultPage> {
     );
   }
 
-  Widget _buildAppBar(BuildContext context) {
+  PreferredSizeWidget? _buildAppBar(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
       backgroundColor: _contentsBackgroundColor,

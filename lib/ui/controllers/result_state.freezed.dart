@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'result_state.dart';
 
@@ -9,10 +9,13 @@ part of 'result_state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$ResultStateTearOff {
   const _$ResultStateTearOff();
 
-// ignore: unused_element
   _ResultState call(
       {List<GetBacklogItemViewModel> backlogItemsViewModel =
           const <GetBacklogItemViewModel>[]}) {
@@ -22,15 +25,20 @@ class _$ResultStateTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $ResultState = _$ResultStateTearOff();
 
+/// @nodoc
 mixin _$ResultState {
-  List<GetBacklogItemViewModel> get backlogItemsViewModel;
+  List<GetBacklogItemViewModel> get backlogItemsViewModel =>
+      throw _privateConstructorUsedError;
 
-  $ResultStateCopyWith<ResultState> get copyWith;
+  @JsonKey(ignore: true)
+  $ResultStateCopyWith<ResultState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $ResultStateCopyWith<$Res> {
   factory $ResultStateCopyWith(
           ResultState value, $Res Function(ResultState) then) =
@@ -38,6 +46,7 @@ abstract class $ResultStateCopyWith<$Res> {
   $Res call({List<GetBacklogItemViewModel> backlogItemsViewModel});
 }
 
+/// @nodoc
 class _$ResultStateCopyWithImpl<$Res> implements $ResultStateCopyWith<$Res> {
   _$ResultStateCopyWithImpl(this._value, this._then);
 
@@ -47,16 +56,18 @@ class _$ResultStateCopyWithImpl<$Res> implements $ResultStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object backlogItemsViewModel = freezed,
+    Object? backlogItemsViewModel = freezed,
   }) {
     return _then(_value.copyWith(
       backlogItemsViewModel: backlogItemsViewModel == freezed
           ? _value.backlogItemsViewModel
-          : backlogItemsViewModel as List<GetBacklogItemViewModel>,
+          : backlogItemsViewModel // ignore: cast_nullable_to_non_nullable
+              as List<GetBacklogItemViewModel>,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$ResultStateCopyWith<$Res>
     implements $ResultStateCopyWith<$Res> {
   factory _$ResultStateCopyWith(
@@ -66,6 +77,7 @@ abstract class _$ResultStateCopyWith<$Res>
   $Res call({List<GetBacklogItemViewModel> backlogItemsViewModel});
 }
 
+/// @nodoc
 class __$ResultStateCopyWithImpl<$Res> extends _$ResultStateCopyWithImpl<$Res>
     implements _$ResultStateCopyWith<$Res> {
   __$ResultStateCopyWithImpl(
@@ -77,20 +89,22 @@ class __$ResultStateCopyWithImpl<$Res> extends _$ResultStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object backlogItemsViewModel = freezed,
+    Object? backlogItemsViewModel = freezed,
   }) {
     return _then(_ResultState(
       backlogItemsViewModel: backlogItemsViewModel == freezed
           ? _value.backlogItemsViewModel
-          : backlogItemsViewModel as List<GetBacklogItemViewModel>,
+          : backlogItemsViewModel // ignore: cast_nullable_to_non_nullable
+              as List<GetBacklogItemViewModel>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_ResultState implements _ResultState {
   _$_ResultState(
-      {this.backlogItemsViewModel = const <GetBacklogItemViewModel>[]})
-      : assert(backlogItemsViewModel != null);
+      {this.backlogItemsViewModel = const <GetBacklogItemViewModel>[]});
 
   @JsonKey(defaultValue: const <GetBacklogItemViewModel>[])
   @override
@@ -115,6 +129,7 @@ class _$_ResultState implements _ResultState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(backlogItemsViewModel);
 
+  @JsonKey(ignore: true)
   @override
   _$ResultStateCopyWith<_ResultState> get copyWith =>
       __$ResultStateCopyWithImpl<_ResultState>(this, _$identity);
@@ -125,17 +140,20 @@ abstract class _ResultState implements ResultState {
       _$_ResultState;
 
   @override
-  List<GetBacklogItemViewModel> get backlogItemsViewModel;
+  List<GetBacklogItemViewModel> get backlogItemsViewModel =>
+      throw _privateConstructorUsedError;
   @override
-  _$ResultStateCopyWith<_ResultState> get copyWith;
+  @JsonKey(ignore: true)
+  _$ResultStateCopyWith<_ResultState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 class _$GetBacklogItemViewModelTearOff {
   const _$GetBacklogItemViewModelTearOff();
 
-// ignore: unused_element
   _GetBacklogItemViewModel call(
-      {String storyPoint, String name, int confidentDegree}) {
+      {String storyPoint = '', String name = '', int confidentDegree = 0}) {
     return _GetBacklogItemViewModel(
       storyPoint: storyPoint,
       name: name,
@@ -144,17 +162,21 @@ class _$GetBacklogItemViewModelTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $GetBacklogItemViewModel = _$GetBacklogItemViewModelTearOff();
 
+/// @nodoc
 mixin _$GetBacklogItemViewModel {
-  String get storyPoint;
-  String get name;
-  int get confidentDegree;
+  String get storyPoint => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  int get confidentDegree => throw _privateConstructorUsedError;
 
-  $GetBacklogItemViewModelCopyWith<GetBacklogItemViewModel> get copyWith;
+  @JsonKey(ignore: true)
+  $GetBacklogItemViewModelCopyWith<GetBacklogItemViewModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $GetBacklogItemViewModelCopyWith<$Res> {
   factory $GetBacklogItemViewModelCopyWith(GetBacklogItemViewModel value,
           $Res Function(GetBacklogItemViewModel) then) =
@@ -162,6 +184,7 @@ abstract class $GetBacklogItemViewModelCopyWith<$Res> {
   $Res call({String storyPoint, String name, int confidentDegree});
 }
 
+/// @nodoc
 class _$GetBacklogItemViewModelCopyWithImpl<$Res>
     implements $GetBacklogItemViewModelCopyWith<$Res> {
   _$GetBacklogItemViewModelCopyWithImpl(this._value, this._then);
@@ -172,21 +195,28 @@ class _$GetBacklogItemViewModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object storyPoint = freezed,
-    Object name = freezed,
-    Object confidentDegree = freezed,
+    Object? storyPoint = freezed,
+    Object? name = freezed,
+    Object? confidentDegree = freezed,
   }) {
     return _then(_value.copyWith(
-      storyPoint:
-          storyPoint == freezed ? _value.storyPoint : storyPoint as String,
-      name: name == freezed ? _value.name : name as String,
+      storyPoint: storyPoint == freezed
+          ? _value.storyPoint
+          : storyPoint // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       confidentDegree: confidentDegree == freezed
           ? _value.confidentDegree
-          : confidentDegree as int,
+          : confidentDegree // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$GetBacklogItemViewModelCopyWith<$Res>
     implements $GetBacklogItemViewModelCopyWith<$Res> {
   factory _$GetBacklogItemViewModelCopyWith(_GetBacklogItemViewModel value,
@@ -196,6 +226,7 @@ abstract class _$GetBacklogItemViewModelCopyWith<$Res>
   $Res call({String storyPoint, String name, int confidentDegree});
 }
 
+/// @nodoc
 class __$GetBacklogItemViewModelCopyWithImpl<$Res>
     extends _$GetBacklogItemViewModelCopyWithImpl<$Res>
     implements _$GetBacklogItemViewModelCopyWith<$Res> {
@@ -209,29 +240,40 @@ class __$GetBacklogItemViewModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object storyPoint = freezed,
-    Object name = freezed,
-    Object confidentDegree = freezed,
+    Object? storyPoint = freezed,
+    Object? name = freezed,
+    Object? confidentDegree = freezed,
   }) {
     return _then(_GetBacklogItemViewModel(
-      storyPoint:
-          storyPoint == freezed ? _value.storyPoint : storyPoint as String,
-      name: name == freezed ? _value.name : name as String,
+      storyPoint: storyPoint == freezed
+          ? _value.storyPoint
+          : storyPoint // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       confidentDegree: confidentDegree == freezed
           ? _value.confidentDegree
-          : confidentDegree as int,
+          : confidentDegree // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$_GetBacklogItemViewModel implements _GetBacklogItemViewModel {
   const _$_GetBacklogItemViewModel(
-      {this.storyPoint, this.name, this.confidentDegree});
+      {this.storyPoint = '', this.name = '', this.confidentDegree = 0});
 
+  @JsonKey(defaultValue: '')
   @override
   final String storyPoint;
+  @JsonKey(defaultValue: '')
   @override
   final String name;
+  @JsonKey(defaultValue: 0)
   @override
   final int confidentDegree;
 
@@ -261,6 +303,7 @@ class _$_GetBacklogItemViewModel implements _GetBacklogItemViewModel {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(confidentDegree);
 
+  @JsonKey(ignore: true)
   @override
   _$GetBacklogItemViewModelCopyWith<_GetBacklogItemViewModel> get copyWith =>
       __$GetBacklogItemViewModelCopyWithImpl<_GetBacklogItemViewModel>(
@@ -274,11 +317,13 @@ abstract class _GetBacklogItemViewModel implements GetBacklogItemViewModel {
       int confidentDegree}) = _$_GetBacklogItemViewModel;
 
   @override
-  String get storyPoint;
+  String get storyPoint => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  int get confidentDegree;
+  int get confidentDegree => throw _privateConstructorUsedError;
   @override
-  _$GetBacklogItemViewModelCopyWith<_GetBacklogItemViewModel> get copyWith;
+  @JsonKey(ignore: true)
+  _$GetBacklogItemViewModelCopyWith<_GetBacklogItemViewModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }

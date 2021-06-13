@@ -18,7 +18,9 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => FibonacciPage(),
         '/home': (BuildContext context) => FibonacciPage(),
-        '/confidence': (BuildContext context) => ConfidenceDialog(),
+        '/confidence': (BuildContext context) => ConfidenceDialog(
+              storyPoint: '',
+            ),
         '/result': (BuildContext context) => ResultPage.wrapped(),
       },
     );
